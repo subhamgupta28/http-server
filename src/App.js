@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import theme from "./theme";
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Login from './components/Login';
+import { Paper, ThemeProvider } from '@mui/material';
+import {makeStyles} from '@mui/styles';
 
+const useStyles = makeStyles({
+  app: {
+    width: "100vw",
+    // height: "100vh",
+  }
+
+});
 function App() {
+  const classes = useStyles();
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Paper className={classes.app}>
+
+        <BrowserRouter>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={Home} />
+        </BrowserRouter>
+
+      </Paper>
+    </ThemeProvider>
   );
 }
 

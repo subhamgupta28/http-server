@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        td,
+        th {
+            border: 2px solid #212121;
+            text-align: left;
+            padding: 10px;
+            min-width: 140px;
+            ;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        button {
+
+            width: 100%;
+            background-color: black;
+            height: 40px;
+            color: aliceblue;
+
+        }
+
+        input {
+            width: 100%;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>LED CONTROL</h2>
+
+    <table>
+        <form action='/set' method='get'>
+            <tr>
+                <th>Actions</th>
+                <th>Inputs</th>
+
+            </tr>
+            <tr>
+                <td>Mode 1</td>
+                <td><input type='number' name='choice1' min='1' max='15'></td>
+            </tr>
+            <tr>
+                <td>Mode 2</td>
+                <td><input type='number' name='choice2' min='1' max='15'></td>
+            </tr>
+            <tr>
+                <td>Brightness</td>
+                <td><input type='number' name='bht' min='0' max='255'></td>
+
+            </tr>
+            <tr style="background-color: red;">
+                <td>RED</td>
+                <td><input type='number' name='r' min='0' max='255'></td>
+
+            </tr>
+            <tr style="background-color: green;">
+                <td>GREEN</td>
+                <td><input type='number' name='g' min='0' max='255'></td>
+
+            </tr>
+            <tr style="background-color: blue;">
+                <td>BLUE</td>
+                <td><input type='number' name='b' min='0' max='255'></td>
+
+            </tr>
+            <tr>
+
+                <td colspan="2"><button type='submit'>APPLY CHANGES</button></td>
+
+            </tr>
+
+        </form>
+    </table>
+
+</body>
+
+</html>
