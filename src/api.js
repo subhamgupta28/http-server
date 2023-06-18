@@ -8,8 +8,8 @@ export let wsHost = window.location.host;
 
 if (window.location.port === "3000")
     if (true) {
-        host = "http://192.168.185.191:8001"
-        wsHost = "192.168.185.191:8001"
+        host = "http://192.168.37.254:8001"
+        wsHost = "192.168.37.254:8001"
     } else {
         host = "http://192.168.60.32:8001"
         wsHost = "192.168.60.32:8001"

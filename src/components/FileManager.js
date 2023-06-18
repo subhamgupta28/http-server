@@ -19,7 +19,6 @@ const useStyles = makeStyles({
     marginLeft: drawerWidth,
   },
   drawer: {
-
     width: drawerWidth,
     flexShrink: 0
   },
@@ -54,6 +53,7 @@ function FileManager({ path, setPath }) {
   const [currentTab, setCurrentTab] = React.useState("")
   const [disabled, setDisabled] = React.useState(false)
   const [idx, setIdx] = React.useState(0)
+  let count = 0;
 
 
 
@@ -62,7 +62,13 @@ function FileManager({ path, setPath }) {
       .then(response => response.data)
       .then(data => setFolders(data))
       .catch(error => {
+        if (count < 5) {
+          get()
+          count++;
+        }
         // get()
+
+        console.log(error)
       });
   }
 

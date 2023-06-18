@@ -6,7 +6,7 @@ import host, { token, wsHost, downloadFiles, login } from "../api";
 
 import Sidebar from "./Sidebar";
 import { Alert, CssBaseline, Paper, Snackbar } from "@mui/material";
-import {makeStyles} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import theme from "../theme";
 
 function getCookie(name) {
@@ -57,7 +57,8 @@ function Home() {
             console.log('Received message from server:', event.data);
             let json = JSON.parse(event.data)
             if (json.notify) {
-                notify(json.notifyObj)
+                const msg = "Notification\n" + json.notifyObj.package + "\nText: " + json.notifyObj.text
+                notify(msg)
             }
             if (json.files) {
                 downloadFiles(json.files)
@@ -73,6 +74,7 @@ function Home() {
         });
     }
     const notify = (text) => {
+
         setMsg(text)
         setOpen(true)
     }

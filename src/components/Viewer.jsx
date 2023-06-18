@@ -6,6 +6,8 @@ import host from "../api";
 import PDFViewer from 'pdf-viewer-reactjs'
 import { Close } from '@mui/icons-material';
 import theme from '../theme';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 const useStyles = makeStyles({
     backdrop: {
@@ -112,12 +114,12 @@ export default function Viewer({ open, handleClose, fileList, idx, setIdx }) {
 
 
                     <div className={classes.actButton}>
-                        {/* <IconButton autoFocus color="primary" onClick={handleBefore}>
-                            <RedirectBefore />
+                        <IconButton autoFocus color="primary" onClick={handleBefore}>
+                            <NavigateBeforeIcon />
                         </IconButton>
                         <IconButton autoFocus color="primary" onClick={handleNext}>
-                            <RedirectNext />
-                        </IconButton> */}
+                            <NavigateNextIcon />
+                        </IconButton>
                     </div>
                     {/* <video className={classes.video} src={host + data.uri} controls /> */}
                 </DialogContent>
